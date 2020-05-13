@@ -1,0 +1,32 @@
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.exe.config
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.exe
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.pdb
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csprojAssemblyReference.cache
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\MainWindow.g.cs
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\App.g.cs
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator_MarkupCompile.cache
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator_MarkupCompile.lref
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\MainWindow.baml
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.g.resources
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.Properties.Resources.resources
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csproj.GenerateResource.cache
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csproj.CoreCompileInputs.cache
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.exe
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.pdb
+C:\Users\Custom\Desktop\Toms Work\project1\NewCalculator\BetterCalculator\obj\Debug\ResourceDictonaries\Style.baml
+D:\Projects\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.exe.config
+D:\Projects\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.exe
+D:\Projects\NewCalculator\BetterCalculator\bin\Debug\BetterCalculator.pdb
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csprojAssemblyReference.cache
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\MainWindow.g.cs
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\App.g.cs
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator_MarkupCompile.cache
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator_MarkupCompile.lref
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\MainWindow.baml
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\ResourceDictonaries\Style.baml
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.g.resources
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.Properties.Resources.resources
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csproj.GenerateResource.cache
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.csproj.CoreCompileInputs.cache
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.exe
+D:\Projects\NewCalculator\BetterCalculator\obj\Debug\BetterCalculator.pdb

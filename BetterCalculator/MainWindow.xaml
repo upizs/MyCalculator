@@ -1,0 +1,263 @@
+﻿<Window x:Class="BetterCalculator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:BetterCalculator"
+        mc:Ignorable="d"
+        Background="#f0f0f0"
+        Loaded="Window_Loaded"
+        Title="Calculator" 
+        Topmost="True"
+        MinHeight="450" MinWidth="350" 
+        Height="450" Width="350" >
+    
+    <!--Import style Resource Dictonary to clean the code-->
+    <Window.Resources >
+        <ResourceDictionary Source = "ResourceDictonaries\Style.xaml"/>
+    </Window.Resources>
+    
+    <Border Padding="0">
+        <Grid>
+            
+            <!--Cancel button, set up to close the programm with escape key. Hidden away-->
+            <Grid HorizontalAlignment="Left" Width="0">
+                <Button Name="btnCancel" IsCancel="true" Click="btnCancel_Click" Content="Cancel"/>
+            </Grid>
+            
+            <!--Grid for UI-->
+            <Grid Grid.Column="1">
+            <Grid.RowDefinitions>
+                
+                <!--Comunication box + settings-->
+                <RowDefinition Height="*"/>
+                <!--Buttons-->
+                <RowDefinition Height="3*"/>
+
+            </Grid.RowDefinitions>
+            
+            <!--Comunication Board-->
+            <Grid>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="3*"/>
+                </Grid.RowDefinitions>
+                
+                <!--Set the ComunicationBox-->
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="9*"/>
+
+                    </Grid.ColumnDefinitions>
+                    
+                    
+                        
+
+                    <!--Comunication box where program report the result and errors-->
+                        <ScrollViewer Grid.Column="1" VerticalScrollBarVisibility="Hidden">
+                            <TextBlock x:Name="comunicationBox" 
+                               FontSize="20"
+                               Margin="0 2 0 0"
+                               VerticalAlignment="Center" 
+                               Grid.Column="1"
+                               HorizontalAlignment="Center"
+                               TextWrapping="Wrap"
+                               
+                                />
+                        </ScrollViewer>
+                    </Grid>
+                
+                <!--Textbox for the equations. Receives data from the user-->
+                <TextBox x:Name="equationBox" 
+                         Grid.Row="1" FontSize="60" 
+                         VerticalAlignment="Center" 
+                         Margin="0"
+                         HorizontalAlignment="Right" 
+                         Background="Transparent" 
+                         BorderThickness="0"
+                         FontWeight="SemiBold"  />
+            </Grid>
+
+            <!--Buttons-->
+            <Grid Grid.Row="1" x:Name="buttonsGrid" >
+                <Grid.ColumnDefinitions >
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    
+                </Grid.ColumnDefinitions>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                <!--Functions Buttons-->
+                
+                <Button Style="{StaticResource OperativeButtons}" 
+                        Click="backspaceButton_Click" 
+                        x:Name="backspaceButton" 
+                        Grid.Column="1" Grid.Row="0"
+                        >
+                    <Image Source="Assets\backspaceButton.png" Margin="15"/>
+                </Button>
+                
+                <Button Style="{StaticResource OperativeButtons}" 
+                        Click="clearButton_Click" 
+                        x:Name="clearButton" 
+                        Content="C" 
+                        Grid.Column="0" Grid.Row="0"
+                        />
+
+                <!--Number Buttons-->
+                <Button Style="{StaticResource OperativeButtons}" Click="sevenButton_Click" x:Name="sevenButton" Content="7" Grid.Column="0" Grid.Row="1"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="fourButton_Click" x:Name="fourButton" Content="4" Grid.Column="0" Grid.Row="2"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="oneButton_Click" x:Name="oneButton" Content="1" Grid.Column="0" Grid.Row="3"/>
+                                               
+                <Button Style="{StaticResource OperativeButtons}" Click="eightButton_Click" x:Name="eightButton" Content="8" Grid.Column="1" Grid.Row="1"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="fifeButton_Click" x:Name="fifeButton" Content="5" Grid.Column="1" Grid.Row="2"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="twoButton_Click" x:Name="twoButton" Content="2" Grid.Column="1" Grid.Row="3"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="zeroButton_Click" x:Name="zeroButton" Content="0" Grid.Column="1" Grid.Row="4"/>
+                                               
+                <Button Style="{StaticResource OperativeButtons}" Click="nineButton_Click" x:Name="nineButton" Content="9" Grid.Column="2" Grid.Row="1"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="sixButton_Click" x:Name="sixButton" Content="6" Grid.Column="2" Grid.Row="2"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="threeButton_Click" x:Name="threeButton" Content="3" Grid.Column="2" Grid.Row="3"/>
+                                               
+                <!--Operator buttons-->
+
+                <Button Style="{StaticResource OperativeButtons}" Content=")" Grid.Column="3" Grid.Row="0" x:Name="closeBracketButton" Click="closeBracketButton_Click"/>
+                <Button Style="{StaticResource OperativeButtons}" Content="(" Grid.Column="2" Grid.Row="0" x:Name="openBracketButton" Click="openBracketButton_Click"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="dotButton_Click" x:Name="dotButton" Content="." Grid.Column="0" Grid.Row="4"/>
+                <Button Style="{StaticResource OperativeButtons}" Click="divideButton_Click" x:Name="divideButton" Grid.Column="3" Grid.Row="1">
+                    <Image Source="Assets\divideButton.png" Margin="15"/>
+                </Button>
+                <Button Style="{StaticResource OperativeButtons}" Click="multiplyButton_Click" x:Name="multiplyButton" Grid.Column="3" Grid.Row="2">
+                    <Image Source="Assets\multiplyButton.png" Margin="20"/>
+                </Button>
+                <Button Style="{StaticResource OperativeButtons}" Click="minusButton_Click" x:Name="minusButton" Grid.Column="3" Grid.Row="3">
+                    <Image Source="Assets\minusButton.png" Margin="20"/>
+                </Button>
+                        <Button Style="{StaticResource OperativeButtons}" Click="plusButton_Click" x:Name="plusButton" Grid.Column="3" Grid.Row="4">
+                    <Image Source="Assets\plusButton.png" Margin="20"/>
+                        </Button>
+                <Button Style="{StaticResource OperativeButtons}" IsDefault="True"  Click="equalsButton_Click" x:Name="equalsButton" Grid.Column="2" Grid.Row="4">
+                    <Image Source="Assets\equalsButton.png" Margin="20"/>
+                </Button>
+
+            </Grid>
+
+
+
+        </Grid>
+            <!--Drawer menu-->
+            <Grid x:Name="nav_pnl" 
+                  Grid.Column="0"
+                  HorizontalAlignment="Left"
+                  Width="0"
+                  Background="#f0f0f0" >
+
+                <StackPanel>
+                    <!--Listview with menu items-->
+
+                    <ListView x:Name="listView"
+                              Background="Transparent"
+                              BorderBrush="Transparent"
+                              ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        
+                        <!--Standart-->
+                        <ListViewItem HorizontalAlignment="Left"
+                                      Margin="0 40 0 15" 
+                                      >
+
+                            <StackPanel Orientation="Horizontal" >
+
+                                <Image Source="Assets\standartButton.png"
+                                       
+                                       Margin=" 0 0 0 0"
+                                       Height="20"/> 
+
+                                <TextBlock Text="Standart"
+                                           VerticalAlignment="Center"
+                                           FontSize="20"
+                                           Margin="5 0 0 0"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        
+                    </ListView>
+                             
+
+                </StackPanel>
+
+            </Grid>
+            <Grid Height="25"
+                  Width="25"
+                  HorizontalAlignment="Left"
+                  Margin="5 5"
+                  VerticalAlignment="Top"
+                  >
+                <ToggleButton x:Name="Tg_Btn"
+                                      Grid.Column="0"
+                                      BorderThickness="0"
+                                      Style="{StaticResource tb_style}"
+                                      Unchecked="Tg_Btn_Unchecked"
+                                      Checked="Tg_Btn_Checked">
+
+                    <!--Toggle Button background-->
+                    <ToggleButton.Background>
+                        <ImageBrush ImageSource="Assets\menuButton.png" 
+                                            Stretch="Uniform">
+
+                        </ImageBrush>
+                    </ToggleButton.Background>
+
+                    <!--Button checked unchecked trgiggers-->
+                    <ToggleButton.Triggers>
+                        <EventTrigger RoutedEvent="ToggleButton.Unchecked">
+                            <BeginStoryboard>
+                                <Storyboard x:Name="HideStackPanel">
+                                    <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="150" To="0"
+                                                Duration="0:0:0.2">
+
+                                    </DoubleAnimation>
+
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="ToggleButton.Checked">
+                            <BeginStoryboard>
+
+                                <Storyboard x:Name="ShowStackPanel">
+                                    <DoubleAnimation
+                                                
+                                                Storyboard.TargetName="nav_pnl"
+                                                Storyboard.TargetProperty="Width"
+                                                BeginTime="0:0:0"
+                                                From="0" To="150"
+                                                Duration="0:0:0.2">
+
+                                    </DoubleAnimation>
+                                </Storyboard>
+
+                            </BeginStoryboard>
+
+                        </EventTrigger>
+
+
+                    </ToggleButton.Triggers>
+
+                </ToggleButton>
+            </Grid>
+        </Grid>
+        
+    </Border>
+</Window>
